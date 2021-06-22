@@ -57,7 +57,7 @@
 - (void)showLabels {
     [UIView animateWithDuration:0.3 animations:^{
         CGRect labelsFrame = self.labelsView.frame;
-        labelsFrame.origin.y -= 150;
+        labelsFrame.origin.y = 150;
         self.labelsView.frame = labelsFrame;
         
        // self.labelsView.alpha = 0;
