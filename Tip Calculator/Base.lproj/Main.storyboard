@@ -43,12 +43,13 @@
                                         </connections>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="daH-fH-tno">
-                                        <rect key="frame" x="3" y="221" width="216" height="32"/>
+                                        <rect key="frame" x="0.0" y="223" width="227" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="15%"/>
                                             <segment title="20%"/>
                                             <segment title="25%"/>
+                                            <segment title="Custom"/>
                                         </segments>
                                         <connections>
                                             <action selector="updateLabels:" destination="BYZ-38-t0r" eventType="valueChanged" id="C8V-3i-ieR"/>
@@ -57,6 +58,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.82201862510000001" green="0.91980725529999996" blue="0.87498998930000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-hX-54d">
+                                <rect key="frame" x="89" y="518" width="237" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.82201862510000001" green="0.91980725529999996" blue="0.87498998930000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -68,6 +75,7 @@
                     <navigationItem key="navigationItem" title="Tip Calculator" id="Er7-x9-E2o"/>
                     <connections>
                         <outlet property="billField" destination="P52-Na-kTy" id="cpl-my-ERc"/>
+                        <outlet property="customTipField" destination="1Mn-hX-54d" id="xjX-ht-YEI"/>
                         <outlet property="labelsView" destination="kza-se-d01" id="Spi-7R-kJI"/>
                         <outlet property="tipLabel" destination="uVt-v7-2U0" id="hXH-Ue-Hv3"/>
                         <outlet property="tipPercentagesControl" destination="daH-fH-tno" id="bbY-0g-byN"/>
