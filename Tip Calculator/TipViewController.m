@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipPercentagesControl;
+@property (weak, nonatomic) IBOutlet UIView *labelsView;
 
 @end
 
@@ -29,6 +30,8 @@
 - (IBAction)updateLabels:(id)sender {
     if (self.billField.text.length== 0) {
         [self hideLabels];
+    } else {
+        [self showLabels];
     }
     double tipPercentages[] = {0.15, 0.2, 0.25};
     double tipPercentage = tipPercentages[self.tipPercentagesControl.selectedSegmentIndex];
@@ -41,9 +44,24 @@
 }
 
 - (void)hideLabels {
-    CGRect billFrame = self.billField.frame;
-    billFrame.origin.y += 200;
-    self.billField.frame = billFrame;
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect labelsFrame = self.labelsView.frame;
+        labelsFrame.origin.y += 150;
+        self.labelsView.frame = labelsFrame;
+        
+       // self.labelsView.alpha = 0;
+    }];
+    
+}
+
+- (void)showLabels {
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect labelsFrame = self.labelsView.frame;
+        labelsFrame.origin.y -= 150;
+        self.labelsView.frame = labelsFrame;
+        
+       // self.labelsView.alpha = 0;
+    }];
 }
 /*
 #pragma mark - Navigation
