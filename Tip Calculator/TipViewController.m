@@ -27,6 +27,9 @@
     [self.view endEditing:(true)];
 }
 - (IBAction)updateLabels:(id)sender {
+    if (self.billField.text.length== 0) {
+        [self hideLabels];
+    }
     double tipPercentages[] = {0.15, 0.2, 0.25};
     double tipPercentage = tipPercentages[self.tipPercentagesControl.selectedSegmentIndex];
     
@@ -37,6 +40,11 @@
     self.totalLabel.text = [NSString stringWithFormat:@"%.2f", total];
 }
 
+- (void)hideLabels {
+    CGRect billFrame = self.billField.frame;
+    billFrame.origin.y += 200;
+    self.billField.frame = billFrame;
+}
 /*
 #pragma mark - Navigation
 
