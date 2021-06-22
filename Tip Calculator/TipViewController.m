@@ -77,7 +77,7 @@
     self.customTipField.alpha = 1;
     double bill = [self.billField.text doubleValue];
     double customTip = [self.customTipField.text doubleValue]/100 * bill;
-    printf("%f", customTip );
+    //printf("%f", customTip );
     double tip = customTip;
     double total = bill + tip;
     self.tipLabel.text = [NSString stringWithFormat:@"$%.2f", tip];
